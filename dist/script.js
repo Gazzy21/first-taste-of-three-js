@@ -1,5 +1,6 @@
 import * as THREE from "https://esm.sh/three";
 import { OrbitControls } from "https://esm.sh/three/examples/jsm/controls/OrbitControls.js";
+import nebula from "../imgs"
 
 const renderer = new THREE.WebGLRenderer();
 
@@ -51,10 +52,10 @@ const ringTwo = new THREE.Mesh(ringTwoGeometry, ringTwoMaterial);
 scene.add(ringTwo);
 ringTwo.position.y = 3;
 
-const sphereGeometry = new THREE.SphereGeometry(1, 32, 16);
+const sphereGeometry = new THREE.SphereGeometry(2, 32, 16);
 const sphereMaterial = new THREE.MeshStandardMaterial({
   color: 0x0000ff,
-  wireframe: false
+  wireframe: false,
 });
 const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
@@ -91,6 +92,8 @@ function animate() {
   ring.rotation.z += 0.1;
 
   ringTwo.rotation.z += -0.1;
+
+  sphere.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 }
