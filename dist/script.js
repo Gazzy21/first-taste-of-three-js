@@ -26,7 +26,7 @@ const orbit = new OrbitControls(camera, renderer.domElement);
 camera.position.set(0, 2, 8);
 orbit.update();
 
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
+const boxGeometry = new THREE.BoxGeometry(1, 5, 1);
 const boxMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
@@ -69,7 +69,7 @@ const planeMaterial = new THREE.MeshStandardMaterial({
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
 plane.rotation.x = -0.5 * Math.PI;
-plane.recieveShadow = true;
+plane.receiveShadow = true;
 
 const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
 scene.add(ambientLight);
